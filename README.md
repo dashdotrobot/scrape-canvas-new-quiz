@@ -29,6 +29,7 @@ Set an expiration date for your API KEY and just make sure it doesn't fall into 
 - Jupyter Notebook
 - [CanvasAPI package](https://github.com/ucfopen/canvasapi)
 - Your own Canvas API key
+- A little bit, but not too much, of Python savvy
 
 ## Usage
 

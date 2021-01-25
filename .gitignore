@@ -1,0 +1,7 @@
+# IPython notebook files
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Canvas API key files
+API_TOKEN.txt
+BEARER.txt

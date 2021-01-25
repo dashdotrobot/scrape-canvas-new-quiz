@@ -1,0 +1,62 @@
+# Quiz Response Data Schema
+
+
+## Table: course_<course_num>_students.csv
+
+List of all users in the course with the role "Student."
+
+Column	Description
+------------------------------------------------------------------------------
+user_id	Unique identifier for each student. Not the same as their Cornell student ID or SIS ID.
+net_id	Cornell NetID
+name	Student name. This is their "display name" and is not reliable for unique identification.
+------------------------------------------------------------------------------
+
+
+## Table: quiz_<n>_item_options.csv
+
+"Long-format" list of all multiple-choice answer options for the quiz.
+
+Column			Description
+------------------------------------------------------------------------------
+assignment_id		Unique identifier for each assignment
+item_id			Unique identifier for each item (question).
+item_name		Short question title (optional).
+item_text		Full text of the question, with HTML tag markup
+item_choice_id		Unique identifier for each answer option
+correct			Is this answer option correct?
+item_choice_text	Full text of the answer option, with HTML tag markup
+------------------------------------------------------------------------------
+
+
+## Table: quiz_<n>_submissions.csv
+
+List of all quiz submissions.
+
+Column			Description
+------------------------------------------------------------------------------
+user_id 		(see above)
+assignment_id		(see above)
+submission_id		Unique identifier for each submission
+attempt			Attempt number
+participant_session_id	Used internally by the "secret API"
+quiz_session_id		Used internally by the "secret API"
+------------------------------------------------------------------------------
+
+
+## Table: quiz_<n>_responses.csv
+
+"Long-format" list of all student responses to multiple-choice questions. Each
+student has one row per question.
+
+Column		Description
+------------------------------------------------------------------------------
+user_id
+assignment_id
+submission_id
+status		Whether any errors occured
+item_id
+item_order	The order in which the student saw the (scrambled) items
+item_choice_id	Unique ID of the option selected by the student
+correct		Whether or not the student's answer was correct
+------------------------------------------------------------------------------
